@@ -1,0 +1,110 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div style="text-align: center;" class=" justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Oppointments List</h1>
+                </div>
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+
+                            <!-- Card Body -->
+                            <div class="card">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Patients list</h4>
+                                    <div *ngIf="oppointmentList.length ==0" class="alert alert-warning"> no oppointment
+                                        found</div>
+
+                                    <div class="table-responsive">
+                                        <table *ngIf="oppointmentList.length > 0" class="table , table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Name
+                                                    </th>
+                                                    <th>
+                                                        Age
+                                                    </th>
+                                                    <th>
+                                                        phone
+                                                    </th>
+                                                    <th>
+                                                        date
+                                                    </th>
+                                                    <th>
+                                                        details
+                                                    </th>
+                                                    <th>
+                                                        your reply
+                                                    </th>
+                                                    <th>
+                                                        add reply
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let oppointment of oppointmentList">
+                                                    <td>{{oppointment.name}}</td>
+                                                    <td>{{oppointment.age}}</td>
+                                                    <td>{{oppointment.phone}}</td>
+                                                    <td>{{oppointment.date}}</td>
+                                                    <td>{{oppointment.description}}</td>
+                                                    <td>{{oppointment.reply}}</td>
+                                                    <td><button
+                                                            [routerLink]='["/admin/oppointment/update",oppointment._id]'
+                                                            type="button" class="btn btn-outline-primary  btn-sm"><i
+                                                                class="fas fa-plus"></i></button>
+                                                    </td>
+                                                    <td>
+                                                        <button (click)="delete(oppointment)" type="button"
+                                                            class="btn btn-danger mx-5 text-light btn-sm"><i
+                                                                class="fas fa-trash"></i></button>
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>

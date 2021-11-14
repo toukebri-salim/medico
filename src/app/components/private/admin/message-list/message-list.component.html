@@ -1,0 +1,78 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="col-md-9 stretch-card grid-margin">
+                            <div *ngIf="messageList.length ==0" class="alert alert-warning"> no messages found</div>
+
+                            <div *ngIf="messageList.length > 0" class="card ">
+                                <div *ngFor="let message of messageList" class="card-body">
+                                    <p class="card-title">Messages</p>
+                                    <div >
+
+                                        <ul class="icon-data-list">
+                                            <li>
+                                                <div class="d-flex">
+                                                    <img class="rounded-circle"
+                                                        src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
+                                                        alt="">
+                                                    <div>
+                                                        <p class="text-info mb-1">{{message.name}}</p>
+                                                        <p class="mb-0">{{message.numero}}</p>
+                                                        <p style="padding-bottom: 10px;" class="mb-0">{{message.email}}
+                                                        </p>
+                                                        <h5 style="padding-bottom: 10px;" class="mb-0">{{message.text}}
+                                                        </h5>
+
+                                                        <small>{{message.createdAt}}</small>
+                                                        <button (click)="delete(message)" type="button" class="btn btn-danger mx-5 text-light btn-sm"><i
+                                                            class="fas fa-trash"></i></button>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>

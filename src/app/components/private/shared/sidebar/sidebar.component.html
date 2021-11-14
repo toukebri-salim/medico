@@ -1,0 +1,50 @@
+<div  class="wrapper d-flex align-items-stretch h-100">
+    <nav id="sidebar">
+        <div class="custom-menu">
+           
+</div>
+        <div class="p-4">
+          <h1><a [routerLink]='[""]' class="logo">Medico <span>Stay Safe <i class="fas fa-head-side-mask"></i></span></a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li *ngIf ="isLoggedAdmin" class="active">
+        <a [routerLink]='["/admin/dashboard"]'><span class="fas fa-chart-line mr-3"></span> Dashboard</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+          <a [routerLink]='["/admin/oppointment/list"]'><span class="fas fa-ambulance mr-3"></span> Oppointments</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+      <a [routerLink]='["/admin/oppointment-at-home/list"]'><span class="fas fa-home mr-3"></span> Oppointments At Home</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+      <a [routerLink]='["/admin/team"]'><span class="fas fa-user-nurse mr-3"></span> Our Team</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+      <a [routerLink]='["/admin/users/list"]'><span class="fas fa-users mr-3"></span> Users</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+      <a  [routerLink]='["/admin/country/list"]'><span class="fas fa-globe-americas mr-3"></span> country</a>
+      </li>
+      <li *ngIf ="isLoggedAdmin">
+      <a [routerLink]='["/admin/message/list"]'><span class="fa fa-paper-plane mr-3"></span> Messages</a>
+      </li>
+      <li *ngIf ="isLoggedPatient"> 
+        <a [routerLink]='["/patient/list",id]'><span class="fas fa-search-plus mr-3"></span> your oppointments</a>
+        </li>
+        <li *ngIf ="isLoggedPatient"> 
+          <a [routerLink]='["/oppointment/add"]'><span class="fas fa-search-plus mr-3"></span> add oppointments</a>
+          </li>
+    </ul>
+    <div class="footer">
+        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          &copy; Copyright <strong><span>Medico</span></strong>. All Rights Reserved <strong><span>2K</span></strong> 2021.                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- Page Content  -->
+<div id="content" >
+
+</div>
+</div>

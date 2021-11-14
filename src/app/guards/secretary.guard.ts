@@ -1,0 +1,45 @@
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserService } from '../services/user.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SecretaryGuard implements CanActivate, CanActivateChild {
+
+  constructor(private  userservice : UserService, private router : Router){
+  
+  }
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      let isLoggedIn =this.userservice.isLoggedSecretary()
+
+      if (isLoggedIn) {
+        return true;
+        
+      }else {this.router.navigate(['/login']);
+      return false;
+      
+      }
+        
+
+      return true;
+  }
+  canActivateChild(
+    childRoute: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+   
+      let isLoggedIn =this.userservice.isLoggedSecretary()
+      if (isLoggedIn) {
+        return true;
+        
+      }else {this.router.navigate(['/login']);
+      return false;
+      
+      }
+      return true;
+  }
+  
+}

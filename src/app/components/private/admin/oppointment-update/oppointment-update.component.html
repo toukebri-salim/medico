@@ -1,0 +1,67 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <app-topbar></app-topbar>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800"></h1>
+
+
+        </div>
+
+
+        <div class="row">
+          <!-- Area Chart -->
+          <div class="col">
+            <div class="card shadow mb-4">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold ">Add your reply</h6>
+              </div>
+              <!-- Card Body -->
+              <div class="card-body">
+                <form [formGroup]="updateOppointmentsForm" (ngSubmit)="updateOppointment()">
+                  <div class="form-group">
+                    <label for="name">Reply :</label>
+                    <input type="text" name="name" id="name" class="form-control form-control-sm"
+                      formControlName="reply">
+                  
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Content Row -->
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+  

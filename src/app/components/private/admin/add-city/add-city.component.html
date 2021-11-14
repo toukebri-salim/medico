@@ -1,0 +1,92 @@
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <app-topbar></app-topbar>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+        <!-- Page Heading -->
+
+      
+        <!-- Content Row -->
+
+        <div class="row">
+
+          <!-- Area Chart -->
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Add New Country</h4>
+                
+                <form class="forms-sample" [formGroup]="cityAddForm" (ngSubmit)="addCity()">
+
+                  <div class="form-group">
+                    <label for="exampleInputCity1">City</label>
+                    <input formControlName="name" type="text" class="form-control" id="exampleInputCity1"
+                      placeholder="Location">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+    <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

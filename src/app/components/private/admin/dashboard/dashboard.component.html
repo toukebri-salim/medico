@@ -1,0 +1,104 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <div class="col-md-12 grid-margin">
+                <div class="row">
+                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                        <h3 style="margin-left: 20px;" class="font-weight-bold">Welcome Doctor</h3>
+                        <h6 style="margin-left: 20px;"class="font-weight-normal mb-0">All systems are running smoothly! You have </h6>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div style="margin-left: 40px;" class="col-md-5 grid-margin stretch-card">
+
+                    <div  class="card-people mt-auto">
+                        <img src="./../../../../../assets/img/diana-polekhina-e25vPueMBY4-unsplash.jpg" alt="people">
+                        <div class="weather-info">
+                            <div class="d-flex">
+                                <div>
+                                    <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup>
+                                    </h2>
+                                </div>
+                                <div class="ml-2">
+                                    <h4 class="location font-weight-normal">Tunis</h4>
+                                    <h6 class="font-weight-normal">Tunisia</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="margin-top: 30px;" class="col-md-6 grid-margin transparent">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 stretch-card transparent">
+                            <div ng-repeat="nbrOppointments of oppointments" class="card card-tale">
+                                <div  class="card-body">
+                                    <p class="mb-4">Number of Oppointments</p>
+                                    <p  class="fs-30 mb-2">{{oppointments.nbrOppointments}}</p>
+                                    <p > (30 days)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 stretch-card transparent">
+                            <div ng-repeat="nbrOppointmentsHome of oppointmentsHome" class="card card-dark-blue">
+                                <div class="card-body">
+                                    <p  class="mb-4">Number of Oppointments at Home </p>
+                                    <p  class="fs-30 mb-2">{{oppointmentsHome.nbrOppointmentsHome}}</p>
+                                    <p>22.00% (30 days)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                            <div ng-repeat="nbrMessages of messages"  class="card card-light-blue">
+                                <div class="card-body">
+                                    <p class="mb-4">Number of Mesages</p>
+                                    <p  class="fs-30 mb-2">{{messages.nbrMessages}}</p>
+                                    <p>2.00% (30 days)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 stretch-card transparent">
+                            <div ng-repeat="nbrPatients of users" class="card card-light-danger">
+                                <div class="card-body">
+                                    <p class="mb-4">Number of Patient</p>
+                                    <p class="fs-30 mb-2">{{users.nbrPatients}}</p>
+                                    <p>0.22% (30 days)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
